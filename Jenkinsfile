@@ -15,7 +15,7 @@ pipeline {
         }
       }
       steps {
-        container('nodejs') {
+        container('nodejs') { 
           sh 'node --version'
         }
       }
@@ -28,7 +28,7 @@ pipeline {
       stages {
         stage('Build and Push Image') {
           steps {
-            echo "FAVORITE_COLOR is $FAVORITE_COLOR"
+            echo "FAVORITE_COLOR is $FAVORITE_COLOR"  
             echo "TODO - build and push image"
           }
         }
@@ -39,7 +39,6 @@ pipeline {
             SERVICE_CREDS = credentials('example-service-username-password')
           }
           steps {
-            // echo "TODO - deploy to $FAVORITE_COLOR with SERVICE_CREDS: username=$SERVICE_CREDS_USR password=$SERVICE_CREDS_PSW"
             sh 'echo TODO - deploy to $FAVORITE_COLOR with SERVICE_CREDS: username=$SERVICE_CREDS_USR password=$SERVICE_CREDS_PSW'
           }
         }
